@@ -19,8 +19,8 @@ toolchains = {
         "toolchain_type":"@io_bazel_rules_terraform//:toolchain_type",
         "host": "linux",
         "arch": "amd64",
-        "url":"https://releases.hashicorp.com/terraform/0.11.11/terraform_0.11.11_linux_amd64.zip",
-        "sha256":"t94504f4a67bad612b5c8e3a4b7ce6ca2772b3c1559630dfd71e9c519e3d6149c"
+        "url":"https://releases.hashicorp.com/terraform/0.13.7/terraform_0.13.7_linux_amd64.zip",
+        "sha256":"4a52886e019b4fdad2439da5ff43388bbcc6cce9784fde32c53dcd0e28ca9957"
     },
     "terraform_osx": {
         "name": "terraform_osx",
@@ -36,8 +36,8 @@ toolchains = {
         "toolchain_type":"@io_bazel_rules_terraform//:toolchain_type",
         "host": "darwin",
         "arch": "amd64",
-        "url":"https://releases.hashicorp.com/terraform/0.11.11/terraform_0.11.11_darwin_amd64.zip",
-        "sha256":"6b6e8253b678554c67d717c42209fd857bfe64a1461763c05d3d1d85c6f618d3"
+        "url":"https://releases.hashicorp.com/terraform/0.13.7/terraform_0.13.7_darwin_amd64.zip",
+        "sha256":"d5fbb589bc35c2655d0705c26117135cbb25e4259f120415009e0e6427ea97c8"
     }
 }
 
@@ -173,7 +173,7 @@ terraform_plan = rule(
     outputs = {"out": "%{name}.out"},
 )
 
-def terraform_register_toolchains(version="0.11.11"):
+def terraform_register_toolchains(version="0.13.7"):
     if "download_terraform" not in native.existing_rules():
         download_terraform(
             name = "terraform_exec",
