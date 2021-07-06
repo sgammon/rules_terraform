@@ -182,5 +182,5 @@ def terraform_register_toolchains(version="0.13.7"):
 
     for name, toolchain in toolchains.items():
         native.register_toolchains(
-            "//rules_terraform:{0}_toolchain".format(toolchain["name"]),
+            "@io_bazel_rules_terraform//rules_terraform:{0}_toolchain".format(toolchain["name"]),
         )
